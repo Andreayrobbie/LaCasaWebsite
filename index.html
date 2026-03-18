@@ -4,8 +4,410 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to La Casa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+        }
+        
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+        
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        .carousel-counter {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 10;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            flex-wrap: wrap;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #bbb;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active {
+            background-color: #717171;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to La Casa, Napier</h1>
+    
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="20250212_081334.jpg" alt="La Casa Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081347.jpg" alt="La Casa Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081404.jpg" alt="La Casa Image 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081417.jpg" alt="La Casa Image 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081427.jpg" alt="La Casa Image 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081518.jpg" alt="La Casa Image 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081703.jpg" alt="La Casa Image 7">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081712.jpg" alt="La Casa Image 8">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081714.jpg" alt="La Casa Image 9">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081752.jpg" alt="La Casa Image 10">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081806.jpg" alt="La Casa Image 11">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081819.jpg" alt="La Casa Image 12">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081851.jpg" alt="La Casa Image 13">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081919.jpg" alt="La Casa Image 14">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_081923.jpg" alt="La Casa Image 15">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082327.jpg" alt="La Casa Image 16">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082354.jpg" alt="La Casa Image 17">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082411.jpg" alt="La Casa Image 18">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082449.jpg" alt="La Casa Image 19">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082504.jpg" alt="La Casa Image 20">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082533.jpg" alt="La Casa Image 21">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082538.jpg" alt="La Casa Image 22">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082646.jpg" alt="La Casa Image 23">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082714.jpg" alt="La Casa Image 24">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082718.jpg" alt="La Casa Image 25">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082747.jpg" alt="La Casa Image 26">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082752.jpg" alt="La Casa Image 27">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082754.jpg" alt="La Casa Image 28">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082819.jpg" alt="La Casa Image 29">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082824.jpg" alt="La Casa Image 30">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082832.jpg" alt="La Casa Image 31">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082945.jpg" alt="La Casa Image 32">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082950.jpg" alt="La Casa Image 33">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_082957.jpg" alt="La Casa Image 34">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_083110.jpg" alt="La Casa Image 35">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_083131.jpg" alt="La Casa Image 36">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084214.jpg" alt="La Casa Image 37">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084223.jpg" alt="La Casa Image 38">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084231.jpg" alt="La Casa Image 39">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084240.jpg" alt="La Casa Image 40">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084245.jpg" alt="La Casa Image 41">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084406.jpg" alt="La Casa Image 42">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084419.jpg" alt="La Casa Image 43">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084437.jpg" alt="La Casa Image 44">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084441.jpg" alt="La Casa Image 45">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_084447.jpg" alt="La Casa Image 46">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_085440.jpg" alt="La Casa Image 47">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_085445.jpg" alt="La Casa Image 48">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_085506.jpg" alt="La Casa Image 49">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250212_085540.jpg" alt="La Casa Image 50">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250302_153341.jpg" alt="La Casa Image 51">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250309_184816.jpg" alt="La Casa Image 52">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250309_184825.jpg" alt="La Casa Image 53">
+            </div>
+            <div class="carousel-slide">
+                <img src="20250309_184833.jpg" alt="La Casa Image 54">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG-20250214-WA0002.jpg" alt="La Casa Image 55">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG20260106135012.jpg" alt="La Casa Image 56">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG20260106135030.jpg" alt="La Casa Image 57">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0422.jpg" alt="La Casa Image 58">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0432.jpg" alt="La Casa Image 59">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0459.jpg" alt="La Casa Image 60">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0468.jpg" alt="La Casa Image 61">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0469.jpg" alt="La Casa Image 62">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0471.jpg" alt="La Casa Image 63">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0472.jpg" alt="La Casa Image 64">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0476.jpg" alt="La Casa Image 65">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0480.jpg" alt="La Casa Image 66">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0498.jpg" alt="La Casa Image 67">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0500.jpg" alt="La Casa Image 68">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0501.jpg" alt="La Casa Image 69">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0506.jpg" alt="La Casa Image 70">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0512.jpg" alt="La Casa Image 71">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0534.jpg" alt="La Casa Image 72">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0544.jpg" alt="La Casa Image 73">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0548.jpg" alt="La Casa Image 74">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0550.jpg" alt="La Casa Image 75">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0551.jpg" alt="La Casa Image 76">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_0558.jpg" alt="La Casa Image 77">
+            </div>
+            
+            <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
+            <div class="carousel-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">77</span>
+            </div>
+        </div>
+        
+        <div class="carousel-dots" id="dots-container"></div>
+    </div>
+    
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        const dotsContainer = document.getElementById('dots-container');
+        
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+        
+        function showSlide(index) {
+            // Wrap around
+            if (index >= totalSlides) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                currentSlideIndex = totalSlides - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+            
+            // Update slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlideIndex].classList.add('active');
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlideIndex);
+            });
+            
+            // Update counter
+            document.getElementById('current-slide').textContent = currentSlideIndex + 1;
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlideIndex + direction);
+        }
+        
+        function goToSlide(index) {
+            showSlide(index);
+        }
+    </script>
 </body>
 </html>
