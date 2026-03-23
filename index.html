@@ -377,12 +377,26 @@
         </div>
         
         <div class="carousel-dots" id="dots-container"></div>
-    </div>
+    </div>      
 
     <h2>Testimonials</h2>
-    <div>
-        
-    </div>
+     <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="vbook/20250212_081334.jpg" alt="La Casa Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="vbook/IMG_0558.jpg" alt="La Casa Image 2">
+            </div>
+             
+            <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
+            <div class="carousel-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">2</span>
+            </div>
+        </div>
+      </div>
+            
     <script>
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
